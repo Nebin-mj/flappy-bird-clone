@@ -1,0 +1,64 @@
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+body {
+   overflow: hidden;
+}
+
+.title {
+   position: absolute;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   z-index: 10;
+   inset: 0;
+}
+
+.subtitle {
+   margin-top: 0.5rem;
+}
+
+.hidden {
+   display: none;
+}
+
+.bird {
+   --bird-size: 50;
+   position: absolute;
+   top: calc(var(--bird-top) * 1px);
+   left: calc(var(--bird-size) * 1px);
+   height: calc(var(--bird-size) * 1px);
+   width: calc(var(--bird-size) * 1px);
+   background-color: rgba(0, 153, 255, 0.75);
+   border-radius: 50%;
+   z-index: 10;
+}
+
+.pipe {
+   height: 100%;
+   position: absolute;
+   left: calc(var(--pipe-left) * 1px);
+}
+
+.pipe > * {
+   background-color: greenyellow;
+   width: calc(var(--pipe-width) * 1px);
+}
+
+.top {
+   position: absolute;
+   top: 0;
+   bottom: calc(100vh - var(--pipe-length) * 1px);
+}
+
+.bottom {
+   position: absolute;
+   top: calc((var(--pipe-length) + var(--gap-length)) * 1px);
+   bottom: 0;
+}
